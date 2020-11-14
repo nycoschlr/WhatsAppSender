@@ -1,0 +1,16 @@
+# Code that allows you to send whatsapp messages using Twilio.
+
+from twilio.rest import Client
+
+account_sid = '******'
+auth_token = '******'
+client = Client(account_sid, auth_token)
+
+def send_data():
+    message = client.messages.create(
+    from_='whatsapp:+14155238886',
+    body= ( "HEllO WORLD" ),
+    to='whatsapp:+41*******')
+    print(message.sid)
+
+send_data()
